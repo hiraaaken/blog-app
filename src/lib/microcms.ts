@@ -1,0 +1,134 @@
+import {
+  createClient,
+  type MicroCMSQueries,
+  type MicroCMSImage,
+} from "microcms-js-sdk";
+import { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } from "$env/static/private";
+import * as cheerio from "cheerio";
+import hljs from "highlight.js";
+
+// MicroCMS のクライアントを生成
+const client = createClient({
+  serviceDomain: MICROCMS_SERVICE_DOMAIN,
+  apiKey: MICROCMS_API_KEY,
+});
+
+// ブログ記事の型定義
+export type Blog = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  lead: string;
+  content: string;
+  thumbnail?: MicroCMSImage;
+  tags: Tag[];
+};
+
+// タグの型定義
+export type Tag = {
+  id: string;
+  name: string;
+  revisedAt: string;
+  sortOrders: number;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
+
+export type Skill = {
+  id: string;
+  name: string;
+  image: MicroCMSImage;
+  from: string;
+  usedInBusiness: boolean;
+  category: number;
+  displayOrder: number;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+};
+
+// ブログ記事一覧のレスポンス型定義
+export type BlogResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Blog[];
+};
+
+// タグ一覧のレスポンス型定義
+export type TagResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Tag[];
+};
+
+export type SkillResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Skill[];
+};
+
+/**
+ * 公開記事一覧を取得する関数
+ */
+export const getPublishedBlogs = async (queries?: MicroCMSQueries) => {
+  return await client.get<BlogResponse>({
+    endpoint: "blogs",
+    queries: {
+      ...queries,
+    },
+  });
+};
+
+/**
+ * 記事詳細を取得する関数
+ * @param contentId 記事ID
+ * @param queries クエリ
+ */
+export const getDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const data = await client.getListDetail<Blog>({
+    endpoint: "blogs",
+    contentId,
+    queries,
+  });
+
+  // コードブロックのシンタックスハイライト
+  const $ = cheerio.load(data.content);
+  $("pre code").each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass("hljs");
+  });
+
+  return {
+    ...data,
+    content: $.html(),
+  };
+};
+
+/**
+ * タグ一覧を取得する関数
+ */
+export const getTags = async () => {
+  return await client.get<TagResponse>({
+    endpoint: "tags",
+  });
+};
+
+/**
+ * スキル一覧を取得する関数
+ */
+export const getSkills = async () => {
+  return await client.get<SkillResponse>({
+    endpoint: "skills",
+  });
+};

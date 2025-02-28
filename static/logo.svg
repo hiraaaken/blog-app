@@ -1,0 +1,27 @@
+<svg width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="125" cy="125" r="118.5" fill="white" stroke="#1E1E1E" stroke-width="13"/>
+<path d="M86.9827 82.725V90.6326" stroke="white" stroke-width="10"/>
+<path d="M118.004 82.725V90.6326" stroke="white" stroke-width="10"/>
+<mask id="mask0_51_3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="250" height="250">
+<circle cx="125" cy="125" r="117.5" fill="white" stroke="#1E1E1E" stroke-width="15"/>
+</mask>
+<g mask="url(#mask0_51_3)">
+<path d="M125.002 83.3333C164.192 149.252 178.834 83.3333 225.354 252.129H24.6506C72.3866 83.3333 85.8124 149.252 125.002 83.3333Z" fill="#1E1E1E"/>
+<circle cx="113.747" cy="83.3334" r="50.528" fill="#1E1E1E" stroke="white" stroke-width="6"/>
+<mask id="mask1_51_3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="72" y="70" width="12" height="29">
+<ellipse cx="78.3342" cy="84.0937" rx="5.16973" ry="14.1502" transform="rotate(171.656 78.3342 84.0937)" fill="white"/>
+</mask>
+<g mask="url(#mask1_51_3)">
+<rect width="16.8755" height="18.714" transform="matrix(-0.941208 0.337828 -0.179335 -0.983788 88.0813 97.7303)" fill="white"/>
+</g>
+<mask id="mask2_51_3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="106" y="64" width="16" height="37">
+<ellipse cx="7.5242" cy="17.9463" rx="7.5242" ry="17.9463" transform="matrix(0.997332 0.0730007 0.0781299 -0.996943 105.446 99.9617)" fill="white"/>
+</mask>
+<g mask="url(#mask2_51_3)">
+<rect width="18.9839" height="16.0862" transform="matrix(0.840152 0.538369 0.390159 -0.922425 100.38 93.2958)" fill="white"/>
+</g>
+<path d="M226.207 228.102C226.207 238.783 217.419 247.5 206.505 247.5C195.591 247.5 186.803 238.783 186.803 228.102C186.803 217.421 195.591 208.704 206.505 208.704C217.419 208.704 226.207 217.421 226.207 228.102Z" fill="#1E1E1E" stroke="white" stroke-width="5"/>
+<path d="M55.2859 212.287C55.2859 222.968 46.4976 231.685 35.5839 231.685C24.6702 231.685 15.882 222.968 15.882 212.287C15.882 201.606 24.6702 192.889 35.5839 192.889C46.4976 192.889 55.2859 201.606 55.2859 212.287Z" fill="#1E1E1E" stroke="white" stroke-width="5"/>
+<path d="M43.7942 54.6895C43.7942 54.6895 59.9134 60.4027 69.95 56.8185C79.9865 53.2342 84.5959 44.8919 84.5959 44.8919L89.8996 61.5175C89.8996 61.5175 78.4101 66.7892 69.0376 67.1592C59.6251 67.5308 43.7942 54.6895 43.7942 54.6895Z" fill="#1E1E1E"/>
+</g>
+</svg>
