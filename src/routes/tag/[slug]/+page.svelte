@@ -7,8 +7,6 @@
 
   let { data }: PageProps = $props();
 
-  console.log(data);
-
   let breadcrumbs = $derived([
     { label: "Home", href: "/" },
     { label: "Tag", href: "/tag" },

@@ -2,7 +2,6 @@
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import { Search } from "lucide-svelte";
   import type { PageProps } from "./$types";
-  import { fade } from "svelte/transition";
   import BlogList from "$lib/components/blog/BlogList.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import { goto } from "$app/navigation";

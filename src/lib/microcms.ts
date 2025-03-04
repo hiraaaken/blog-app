@@ -25,6 +25,10 @@ export type Blog = {
   content: string;
   thumbnail?: MicroCMSImage;
   tags: Tag[];
+  navigation: {
+    prev: Blog | null;
+    next: Blog | null;
+  };
 };
 
 // タグの型定義
@@ -94,24 +98,62 @@ export const getPublishedBlogs = async (queries?: MicroCMSQueries) => {
 export const getDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
-) => {
-  const data = await client.getListDetail<Blog>({
+): Promise<Blog> => {
+  const blog = await client.getListDetail<Blog>({
     endpoint: "blogs",
     contentId,
     queries,
   });
 
-  // コードブロックのシンタックスハイライト
-  const $ = cheerio.load(data.content);
+  if (!blog) {
+    throw new Error("ブログ記事が見つかりませんでした");
+  }
+
+  const prev = await client.get<BlogResponse>({
+    endpoint: "blogs",
+    queries: {
+      limit: 1,
+      orders: "-publishedAt",
+      fields: "id,title",
+      filters: `publishedAt[less_than]${blog.publishedAt}`,
+    },
+  });
+  const next = await client.get<BlogResponse>({
+    endpoint: "blogs",
+    queries: {
+      limit: 1,
+      orders: "publishedAt",
+      fields: "id,title",
+      filters: `publishedAt[greater_than]${blog.publishedAt}`,
+    },
+  });
+
+  const prevBlog = prev.contents[0] || null;
+  const nextBlog = next.contents[0] || null;
+
+  // コードブロックのシンタックスハイライトとラベル追加
+  const $ = cheerio.load(blog.content);
   $("pre code").each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text());
+    const language = $(elm).attr("class")?.replace("language-", "") || "";
+    const result = language
+      ? hljs.highlight($(elm).text(), {
+          language,
+        })
+      : hljs.highlightAuto($(elm).text());
     $(elm).html(result.value);
     $(elm).addClass("hljs");
+
+    const $copyButton = $(`<button class="copy-button">Copy</button>`);
+    $(elm).parent().append($copyButton);
   });
 
   return {
-    ...data,
+    ...blog,
     content: $.html(),
+    navigation: {
+      prev: prevBlog,
+      next: nextBlog,
+    },
   };
 };
 
