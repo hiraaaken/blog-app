@@ -27,7 +27,13 @@
   <div class="flex items-center justify-between px-1">
     <div>
       <a href="/" class="flex items-center">
-        <img src="logo.svg" alt="icon" class="m-2" width="36px" height="36px" />
+        <img
+          src="/logo.svg"
+          alt="icon"
+          class="m-2"
+          width="36px"
+          height="36px"
+        />
         <span
           class="@[500px]:text-2xl text-xl text-primary font-bold hover:text-opacity-70 duration-200"
           >hiraaaken's blog</span

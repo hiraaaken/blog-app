@@ -22,7 +22,7 @@
   </Card.Header>
   <Card.Content class="h-[35%] py-2">
     <a
-      href="blog/{blog.id}"
+      href="/blog/{blog.id}"
       class="font-semibold inline-block py-1 hover:opacity-80 hover:underline transition duration-200"
       >{blog.title}</a
     >

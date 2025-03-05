@@ -24,3 +24,5 @@ export const load: PageServerLoad = async ({ url }) => {
     searchParams,
   };
 };
+
+export const prerender = false;
