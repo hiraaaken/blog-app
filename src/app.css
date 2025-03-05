@@ -41,6 +41,8 @@
 
     --header-height: 3.25rem;
     --footer-height: 4rem;
+
+    --blockquote: 210 40% 96.1%;
   }
 
   .dark {
@@ -75,6 +77,8 @@
     --destructive-foreground: 210 40% 98%;
 
     --ring: 212.7 26.8% 83.9%;
+
+    --blockquote: 240 6% 12%;
   }
 }
 

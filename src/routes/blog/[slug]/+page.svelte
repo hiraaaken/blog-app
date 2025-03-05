@@ -140,7 +140,7 @@
   }
 
   :global(.content blockquote) {
-    @apply bg-gray-100 border-l-4 border-gray-500 p-4 my-4;
+    @apply bg-blockquote border-l-4 border-gray-500 p-4 my-4;
   }
 
   :global(.content pre) {
