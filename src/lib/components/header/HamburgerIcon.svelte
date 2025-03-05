@@ -49,13 +49,6 @@
     --transition-duration: 400ms;
   }
 
-  button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
   svg {
     transition: transform var(--transition-duration);
   }

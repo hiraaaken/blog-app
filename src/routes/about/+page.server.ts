@@ -2,6 +2,7 @@ import type { PageServerLoad } from "../$types";
 import { getSkills } from "$lib/microcms";
 import { categories } from "../..//utils/constants";
 import type { Skill } from "$lib/microcms";
+import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async () => {
   const skills = await getSkills().then((res) => {
@@ -20,5 +21,10 @@ export const load: PageServerLoad = async () => {
 
     return orderedSkills;
   });
+
+  if (!skills) {
+    error(404, "Skills not found");
+  }
+
   return { skills };
 };

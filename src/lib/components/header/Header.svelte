@@ -5,7 +5,6 @@
   import { onMount } from "svelte";
   import { beforeNavigate } from "$app/navigation";
   import { page } from "$app/state";
-
   import type { Link } from "../../../types";
 
   let currentPath = $state("");
@@ -28,7 +27,7 @@
   <div class="flex items-center justify-between px-1">
     <div>
       <a href="/" class="flex items-center">
-        <img src="logo.svg" alt="icon" class="w-9 m-2" />
+        <img src="logo.svg" alt="icon" class="m-2" width="36px" height="36px" />
         <span
           class="@[500px]:text-2xl text-xl text-primary font-bold hover:text-opacity-70 duration-200"
           >hiraaaken's blog</span

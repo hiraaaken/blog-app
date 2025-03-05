@@ -9,6 +9,3 @@
 
 <Hero />
 <LatestArticles {blogs} />
-
-<style>
-</style>
