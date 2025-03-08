@@ -48,7 +48,7 @@
 <Breadcrumbs {breadcrumbs} />
 <section>
   <!-- Header -->
-  <div class="mb-4">
+  <div class="py-4 border-b">
     <div class="flex justify-center">
       <img src={blog.thumbnail?.url} alt={blog.title} class="w-2/5" />
     </div>
@@ -68,13 +68,14 @@
       </div>
     </div>
   </div>
+
   <!-- Content -->
   <div class="content">
     {@html blog.content}
   </div>
 
   <!-- Footer -->
-  <div class="flex justify-between mt-8">
+  <div class="border-t py-4 flex justify-between mt-8">
     {#if blog.navigation.next}
       <a
         href={`/blog/${blog.navigation.next.id}`}
@@ -108,7 +109,7 @@
 
 <style>
   :global(.content) {
-    @apply text-sm sm:text-base leading-7;
+    @apply text-sm sm:text-base leading-7 py-4;
   }
 
   :global(.content h1) {
