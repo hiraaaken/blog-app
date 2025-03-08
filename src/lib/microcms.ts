@@ -49,6 +49,7 @@ export type Skill = {
   from: string;
   usedInBusiness: boolean;
   category: number;
+  comment: string;
   displayOrder: number;
   createdAt: string;
   updatedAt: string;

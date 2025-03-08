@@ -19,10 +19,10 @@
       </div>
     </div>
     <div class="flex items-center sm:mx-0 sm:px-3 px-8">
-      <div class="text-sm flex flex-col gap-2">
+      <div class="text-sm sm:text-base flex flex-col gap-2 sm:gap-1">
         <p>関西某所で社内SEとして働いています。</p>
         <p>
-          主に業務アプリの開発を行っており、フロントエンドからバックエンドまで色々担当することがあります。
+          業務アプリの開発を行っており、フロントからバックエンドまで色々担当しています。
         </p>
         <p>主にフロントエンド周辺の技術に興味を持っています。</p>
         <p>あと、ランニングとタコスが好き 🏃‍♂️🌮</p>
