@@ -6,6 +6,7 @@
   import { onMount } from "svelte";
   import type { Blog } from "$lib/microcms.js";
   import { ChevronLeft, ChevronRight } from "lucide-svelte";
+  import TableOfContent from "$lib/components/blog/TableOfContent.svelte";
 
   type Props = {
     data: { blog: Blog };
@@ -69,6 +70,7 @@
     </div>
   </div>
 
+  <TableOfContent toc={blog.toc} />
   <!-- Content -->
   <div class="content">
     {@html blog.content}
@@ -137,7 +139,7 @@
   }
 
   :global(.content ol) {
-    @apply my-4;
+    @apply my-4 list-decimal list-inside;
   }
 
   :global(.content li) {

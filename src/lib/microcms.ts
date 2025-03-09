@@ -29,6 +29,11 @@ export type Blog = {
     prev: Blog | null;
     next: Blog | null;
   };
+  toc: {
+    text: string;
+    id: string;
+    name: string;
+  }[];
 };
 
 // タグの型定義
@@ -148,6 +153,14 @@ export const getDetail = async (
     $(elm).parent().append($copyButton);
   });
 
+  // 目次を作成する
+  const headings = $("h1, h2, h3").toArray();
+  const toc = headings.map((heading) => ({
+    text: $(heading).text(),
+    id: $(heading).attr("id") || "",
+    name: heading.tagName,
+  }));
+
   return {
     ...blog,
     content: $.html(),
@@ -155,6 +168,7 @@ export const getDetail = async (
       prev: prevBlog,
       next: nextBlog,
     },
+    toc,
   };
 };
 
