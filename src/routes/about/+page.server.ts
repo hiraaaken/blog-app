@@ -5,13 +5,18 @@ import type { Skill } from "$lib/microcms";
 import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async () => {
+  // スキル一覧を取得
   const skills = await getSkills().then((res) => {
+    // スキルをカテゴリごとにグループ化し、displayOrderでソート
+    const sortedContents = [...res.contents].sort(
+      (a, b) => a.displayOrder - b.displayOrder
+    );
     const groupedSkills = Object.groupBy(
-      res.contents,
+      sortedContents,
       ({ category }) => category
     ) as { [key: string]: Skill[] };
 
-    // skills を並び替える
+    // グループ化したスキル一覧を並び替える
     const orderedSkills: { [key: string]: Skill[] } = {};
     for (const category of Object.values(categories) as string[]) {
       if (groupedSkills[category]) {
