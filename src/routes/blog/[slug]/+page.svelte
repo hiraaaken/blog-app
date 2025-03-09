@@ -128,6 +128,10 @@
     @apply text-base font-bold my-4;
   }
 
+  :global(.content p) {
+    @apply text-base leading-7;
+  }
+
   :global(.content ul) {
     @apply my-4;
   }
