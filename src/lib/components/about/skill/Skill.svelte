@@ -14,7 +14,7 @@
   <Heading>Skill</Heading>
   {#each Object.entries(skills) as [category, skillList]}
     <h2 class="col-span-12 font-bold text-lg">{category}</h2>
-    <div class="col-span-12 flex flex-row gap-2">
+    <div class="col-span-12 grid grid-cols-4 sm:grid-cols-6 gap-2 my-2">
       {#each skills[category] as skill (skill.id)}
         <SkillCard skill={skill as Skill} />
       {/each}
