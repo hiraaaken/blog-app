@@ -9,5 +9,5 @@
 </script>
 
 <Breadcrumbs {breadcrumbs} />
-<Heading text="Works" />
+<Heading>Works</Heading>
 <p>随時更新予定... 🚧</p>
