@@ -1,38 +1,51 @@
-# sv
+# Blog App
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+このプロジェクトは、SvelteKit をベースにしたブログサイトです。MicroCMS との連携により、コンテンツ管理が簡単に行えます。
 
-## Creating a project
+## 📌 主な機能
+- **SvelteKit** を使用した最新のフロントエンド開発環境
+- **Tailwind CSS** を活用したスタイリング
+- **MicroCMS** をデータソースとした動的なコンテンツ管理
+- **コードハイライト**（highlight.js）による記事内のシンタックスハイライト
+- **静的サイトとしてのデプロイ**（@sveltejs/adapter-static対応）
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🛠️ 技術スタック
+- **フレームワーク**: SvelteKit
+- **ビルドツール**: Vite
+- **スタイリング**: Tailwind CSS
+- **コンテンツ管理**: MicroCMS
+- **アイコン**: Lucide Svelte
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🚀 開発環境のセットアップ
+### 1. 必要なツール
+- [Node.js](https://nodejs.org/)（推奨: v18+）
+- [pnpm](https://pnpm.io/)（推奨）または npm / yarn
 
-# create a new project in my-app
-npx sv create my-app
+### 2. プロジェクトのセットアップ
+```sh
+pnpm install  # または npm install / yarn install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+### 3. 開発サーバーの起動
+```sh
+pnpm dev  # または npm run dev / yarn dev
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
+### 4. ビルド
+```sh
+pnpm build  # または npm run build / yarn build
 ```
 
-You can preview the production build with `npm run preview`.
+### 5. ローカルプレビュー
+```sh
+pnpm preview  # または npm run preview / yarn preview
+```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## 🔍 コードチェック・テスト
+### 型チェック
+```sh
+pnpm check  # または npm run check / yarn check
+```
+
+### テスト
+テストは未実装です。。。
