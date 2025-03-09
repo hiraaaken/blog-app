@@ -11,12 +11,12 @@
     <ol class="flex gap-2">
       {#each breadcrumbs as { label, href }, i}
         <li>
-          {#if i === breadcrumbs.length}
-            <span class={i === breadcrumbs.length - 1 ? "font-bold" : ""}>
+          {#if i === breadcrumbs.length - 1}
+            <span class="font-bold">
               {label}
             </span>
           {:else}
-            <a {href} class={i === breadcrumbs.length - 1 ? "font-bold" : ""}>
+            <a {href} class="hover:underline">
               {label}
             </a>
           {/if}

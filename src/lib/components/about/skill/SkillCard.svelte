@@ -8,7 +8,7 @@
 
 <Popover.Root>
   <Popover.Trigger>
-    <Card.Root class="shadow-md min-w-28">
+    <Card.Root class="shadow-md min-w-28 hover:opacity-80">
       <Card.Content class="px-2 pt-2 pb-0 text-center">
         <img
           src={skill.image.url}
