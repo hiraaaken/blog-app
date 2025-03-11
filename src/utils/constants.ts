@@ -8,7 +8,7 @@ export const LINKS: Link[] = [
   { label: "Works", menuName: "works", href: "/works", icon: Brain },
 ];
 
-export const categories = {
+export const CATEGORIES = {
   0: "Language",
   1: "Frontend",
   2: "Backend",
