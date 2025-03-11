@@ -3,9 +3,13 @@
   import Header from "$lib/components/header/Header.svelte";
   import Footer from "$lib/components/footer/Footer.svelte";
   import "../app.css";
-  import { setContext } from "svelte";
+  import type { Snippet } from "svelte";
 
-  let { children } = $props();
+  export type Props = {
+    children: Snippet;
+  };
+
+  let { children }: Props = $props();
 
   // ページ遷移時にトランジションを開始する
   onNavigate((navigation) => {
@@ -18,8 +22,6 @@
       });
     });
   });
-
-  setContext("breadcrumbs", { label: "Home", href: "/" });
 </script>
 
 <svelte:head>

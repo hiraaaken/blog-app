@@ -2,7 +2,11 @@
   import { slide } from "svelte/transition";
   import { ChevronDown } from "lucide-svelte";
 
-  let toc: { text: string; id: string; name: string }[] = $props();
+  export type Props = {
+    toc: { text: string; id: string; name: string }[];
+  };
+
+  let { toc }: Props = $props();
   let isOpen = $state(true);
 </script>
 

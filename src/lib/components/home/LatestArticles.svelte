@@ -5,7 +5,11 @@
   import Heading from "../Heading.svelte";
   import BlogList from "../blog/BlogList.svelte";
 
-  let { blogs }: { blogs: Blog[] } = $props();
+  export type Props = {
+    blogs: Blog[];
+  };
+
+  let { blogs }: Props = $props();
 </script>
 
 <section class="grid gap-3">
