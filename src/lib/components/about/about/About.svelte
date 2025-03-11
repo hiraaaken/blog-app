@@ -14,7 +14,7 @@
       <!-- SNS -->
       <div class="flex justify-center gap-2 mt-1">
         <IconGithub size={18} />
-        <IconX size={18} />
+        <!-- <IconX size={18} /> -->
         <IconZenn size={18} />
       </div>
     </div>
