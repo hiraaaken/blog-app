@@ -3,7 +3,11 @@
   import BlogCard from "./BlogCard.svelte";
   import type { Blog } from "$lib/microcms";
 
-  const { blogs }: { blogs: Blog[] } = $props();
+  export type Props = {
+    blogs: Blog[];
+  };
+
+  const { blogs }: Props = $props();
 </script>
 
 <div in:fade={{ duration: 400 }} class="col-span-12 grid grid-cols-12 gap-5">

@@ -4,7 +4,11 @@
   import TagTip from "../TagTip.svelte";
   import * as Card from "../ui/card/index";
 
-  const { blog }: { blog: Blog } = $props();
+  export type Props = {
+    blog: Blog;
+  };
+
+  const { blog }: Props = $props();
 </script>
 
 <Card.Root class="w-full h-[380px] shadow-md">

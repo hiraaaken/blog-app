@@ -70,7 +70,9 @@
     </div>
   </div>
 
+  <!-- Table of Contents -->
   <TableOfContent toc={blog.toc} />
+
   <!-- Content -->
   <div class="content">
     {@html blog.content}

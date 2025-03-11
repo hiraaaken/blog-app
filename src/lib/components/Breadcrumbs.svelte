@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { Breadcrumb } from "../../types";
 
-  let {
-    breadcrumbs = [{ label: "Home", href: "/" }],
-  }: { breadcrumbs: Breadcrumb[] } = $props();
+  export type Props = {
+    breadcrumbs: Breadcrumb[];
+  };
+
+  let { breadcrumbs = [{ label: "Home", href: "/" }] }: Props = $props();
 </script>
 
 <div>
