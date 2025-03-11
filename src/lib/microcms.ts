@@ -53,7 +53,7 @@ export type Skill = {
   image: MicroCMSImage;
   from: string;
   usedInBusiness: boolean;
-  category: number;
+  category: string[];
   comment: string;
   displayOrder: number;
   createdAt: string;

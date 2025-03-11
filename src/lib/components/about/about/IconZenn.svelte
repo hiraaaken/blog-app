@@ -9,7 +9,7 @@
 <a
   class="p-1 rounded-md hover:bg-accent duration-200"
   target="_blank"
-  href="https://github.com/hiraaaken"
+  href="https://zenn.dev/anko_oisii"
 >
   <svg
     role="img"
