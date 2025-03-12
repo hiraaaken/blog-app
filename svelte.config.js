@@ -25,7 +25,6 @@ const config = {
     alias: {
       "@/*": "./path/to/lib/*",
     },
-    outDir: ".svelte-kit/cloudflare",
   },
 };
 
