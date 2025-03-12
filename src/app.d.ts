@@ -9,12 +9,7 @@ declare global {
     // interface Locals {}
     // interface PageData {}
     // interface PageState {}
-    interface Platform {
-      env?: {
-        MICROCMS_SERVICE_DOMAIN: DurableObjectNamespace;
-        MICROCMS_API_KEY: DurableObjectNamespace;
-      };
-    }
+    // interface Platform {}
   }
 }
 
