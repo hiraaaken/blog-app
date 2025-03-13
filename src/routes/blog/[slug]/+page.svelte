@@ -1,18 +1,17 @@
 <script lang="ts">
-  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import "highlight.js/styles/hybrid.css";
-  import { formatDate } from "../../../utils/dateUtils.js";
+  import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import TagTip from "$lib/components/TagTip.svelte";
-  import { onMount } from "svelte";
-  import type { Blog } from "$lib/microcms.js";
-  import { ChevronLeft, ChevronRight } from "lucide-svelte";
   import TableOfContent from "$lib/components/blog/TableOfContent.svelte";
+  import { onMount } from "svelte";
+  import { formatDate } from "../../../utils/dateUtils.js";
+  import { ChevronLeft, ChevronRight } from "lucide-svelte";
+  import { PUBLIC_BASE_URL } from "$env/static/public";
+  import type { PageProps } from "./$types";
+  import type { Blog } from "$lib/microcms.js";
 
-  type Props = {
-    data: { blog: Blog };
-  };
+  let { data }: PageProps = $props();
 
-  let { data }: Props = $props();
   let { blog } = $derived(data);
   let breadcrumbs = $derived([
     { label: "Home", href: "/" },
@@ -42,8 +41,9 @@
 </script>
 
 <svelte:head>
-  <title>ブログ</title>
-  <meta name="description" content="記事詳細" />
+  <title>{blog.title} | hiraaaken's blog</title>
+  <meta name="description" content={blog.lead} />
+  <link rel="canonical" href={`${PUBLIC_BASE_URL}/blog/${blog.id}`} />
 </svelte:head>
 
 <Breadcrumbs {breadcrumbs} />
