@@ -1,12 +1,19 @@
 <script lang="ts">
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import Heading from "$lib/components/Heading.svelte";
+  import { PUBLIC_BASE_URL } from "$env/static/public";
 
   let breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Works", href: "/works" },
   ];
 </script>
+
+<svelte:head>
+  <title>Works | hiraaaken's blog</title>
+  <meta name="description" content="制作物や手がけたサービスの一覧です。" />
+  <link rel="canonical" href={`${PUBLIC_BASE_URL}/works`} />
+</svelte:head>
 
 <Breadcrumbs {breadcrumbs} />
 <Heading>Works</Heading>

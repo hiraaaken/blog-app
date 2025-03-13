@@ -1,17 +1,18 @@
 <script lang="ts">
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
-  import { Search } from "lucide-svelte";
-  import type { PageProps } from "./$types";
   import BlogList from "$lib/components/blog/BlogList.svelte";
   import Heading from "$lib/components/Heading.svelte";
+  import { Search } from "lucide-svelte";
   import { goto } from "$app/navigation";
+  import { PUBLIC_BASE_URL } from "$env/static/public";
+  import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
 
   let page = $state(1);
   let searchParams = $state(data.searchParams.q);
 
-  let blogs = $derived(data.blogs.contents);
+  let { blogs } = $derived(data);
 
   const handleSearch = async (e: Event) => {
     e.preventDefault();
@@ -25,11 +26,9 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
-  <meta
-    name="description"
-    content="hiraaakenの技術ブログです。学んだことや気になったことを書きます。"
-  />
+  <title>Blog | hiraaaken's blog</title>
+  <meta name="description" content="投稿記事の一覧です。" />
+  <link rel="canonical" href={`${PUBLIC_BASE_URL}/blog`} />
 </svelte:head>
 
 <Breadcrumbs {breadcrumbs} />
@@ -67,6 +66,6 @@
 
 {#snippet body()}
   <section>
-    <BlogList {blogs} />
+    <BlogList blogs={blogs.contents} />
   </section>
 {/snippet}
