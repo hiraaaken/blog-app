@@ -1,6 +1,7 @@
 <script lang="ts">
   import Breadcrumbs from "$lib/components/Breadcrumbs.svelte";
   import Heading from "$lib/components/Heading.svelte";
+  import { PUBLIC_BASE_URL } from "$env/static/public";
 
   let breadcrumbs = [
     { label: "Home", href: "/" },
